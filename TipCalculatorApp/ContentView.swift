@@ -42,6 +42,27 @@ struct ContentView: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             
+            // Sliders
+            // Bill Amount Slider
+            VStack {
+                Text("Bill Amount: \(billAmount, format: .currency(code: selectedCurrency))")
+                Slider(value: $billAmount, in: 0...1000, step: 1)
+            }
+            
+            // Tip Percentage Slider
+            VStack {
+                Text("Tip Percentage: \(Int(tipPercentage))%")
+                Slider(value: $tipPercentage, in: 1...100, step: 1)
+            }
+            
+            // Number of People Slider
+            VStack {
+                Text("Number of People: \(Int(numberOfPeople))")
+                Slider(value: $numberOfPeople, in: 1...10, step: 1)
+            }
+            
+            
+            
             
                 
         }
