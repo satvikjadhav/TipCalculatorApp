@@ -47,18 +47,24 @@ struct ContentView: View {
             VStack {
                 Text("Bill Amount: \(billAmount, format: .currency(code: selectedCurrency))")
                 Slider(value: $billAmount, in: 0...1000, step: 1)
+                    .accentColor(.green)
+                    .padding(.horizontal)
             }
             
             // Tip Percentage Slider
             VStack {
                 Text("Tip Percentage: \(Int(tipPercentage))%")
                 Slider(value: $tipPercentage, in: 1...100, step: 1)
+                    .accentColor(.blue)
+                    .padding(.horizontal)
             }
             
             // Number of People Slider
             VStack {
                 Text("Number of People: \(Int(numberOfPeople))")
                 Slider(value: $numberOfPeople, in: 1...10, step: 1)
+                    .accentColor(.purple)
+                    .padding(.horizontal)
             }
             
             
