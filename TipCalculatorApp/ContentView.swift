@@ -85,11 +85,37 @@ struct ContentView: View {
                     .shadow(radius: 10)
             }
             
+            // Results
+            if showResult {
+                VStack {
+                    Text("Total: \(totalAmount, format: .currency(code: selectedCurrency))")
+                        .font(.headline)
+                        .foregroundColor(.green)
+                    Text("Each Person: \(amountPerPerson, format: .currency(code: selectedCurrency))")
+                        .font(.headline)
+                        .foregroundColor(.blue)
+                    Text("Tip: \(tipAmount, format: .currency(code: selectedCurrency))")
+                        .font(.headline)
+                        .foregroundStyle(.red)
+                }
+            }
+            
+            // button
+            Button(action: {
+                self.showResult.toggle()
+            }) {
+                Text(showResult ? "Hide Results" : "Calculate")
+                    .foregroundStyle(.white)
+                    .padding()
+                    .frame(width: 200, height: 50)
+                    .background(showResult ? Color.red : Color.blue)
+                    .cornerRadius(10)
+            }
+            
             Spacer()
             
-            
-                
         }
+        .padding()
     }
     
 }
